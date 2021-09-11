@@ -1,4 +1,4 @@
-package Function;
+package Class.generatorPhrase;
 
 public class generatorPhrase {
     void Generate()

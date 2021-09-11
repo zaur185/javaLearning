@@ -1,4 +1,4 @@
-package Function;
+package Class.beerSong;
 
 public class beerSong {
     public void Song()
