@@ -1,6 +1,6 @@
 package Class.generatorPhrase;
 
-public class generatorPhrase {
+public class GeneratorPhrase {
     void Generate()
     {
         String[] wordListOne ={"круглосуточный","трех-звенный","30000-футовый","взаимный","обоюдный выйгрыш","фронтэнд",

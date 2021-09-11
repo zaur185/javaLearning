@@ -1,6 +1,6 @@
 package Class.brigade;
 
-public class decorator extends brigade {
+public class Decorator extends Brigade {
         public String name;
 
         @Override
