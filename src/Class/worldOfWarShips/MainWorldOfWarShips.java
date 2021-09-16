@@ -1,5 +1,7 @@
 package Class.worldOfWarShips;
 
+import java.util.ArrayList;
+
 public class MainWorldOfWarShips
 {
     public static void main(String[] args)
@@ -12,7 +14,10 @@ public class MainWorldOfWarShips
 
         int randomNum = (int) (Math.random() * 5);
 
-        int[] location = {randomNum, randomNum+1, randomNum+2};
+        ArrayList<String> location = new ArrayList<>() ;
+        location.add("2");
+        location.add("3");
+        location.add("4");
 
         theDotCom.setLocationCells(location);
         boolean isAlive = true;
@@ -21,6 +26,7 @@ public class MainWorldOfWarShips
         {
             String guess =helper.getUserInput("Введите число");
             String result = theDotCom.checkYourself(guess);
+            System.out.println(result);
             numOfGuesses++;
             if(result.equals("Потопил"))
             {

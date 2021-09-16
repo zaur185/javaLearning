@@ -1,29 +1,33 @@
 package Class.worldOfWarShips;
+import java.util.ArrayList;
 
 public class SimpleDotCom {
-    private int[] locationCells;
-    private int numOfHits;
+    private ArrayList<String> locationCells;
+    //private int numOfHits;
 
-    String checkYourself(String stringGuess)
+    String checkYourself(String userInput)
     {
-        int guees = Integer.parseInt(stringGuess);
         String result = "Мимо";
 
-        for(int cell : locationCells)
+        int index = locationCells.indexOf(userInput);
+
+        if(index >=0)
         {
-            if(guees==cell)
+            locationCells.remove(index);
+
+            if(locationCells.isEmpty())
             {
-                result="Попал";
-                numOfHits++;
-                break;
+                result="Потопил";
+            }
+            else
+            {
+                result= "Попал";
             }
         }
-        if(numOfHits==locationCells.length)
-        {
-            result ="Потопил";
-        }
-        System.out.println(result);
         return result;
     }
-    void setLocationCells(int[] locs){locationCells=locs;}
+    void setLocationCells(ArrayList<String> locs)
+    {
+        locationCells=locs;
+    }
 }
