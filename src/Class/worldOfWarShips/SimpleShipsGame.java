@@ -1,4 +1,4 @@
 package Class.worldOfWarShips;
 
-public class SimpleDotComGame {
+public class SimpleShipsGame {
 }
