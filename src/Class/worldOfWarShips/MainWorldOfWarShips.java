@@ -6,11 +6,12 @@ public class MainWorldOfWarShips
 {
     public static void main(String[] args)
     {
+        /*
         // write your code here
         int numOfGuesses = 0;
         GameHelper helper = new GameHelper();
 
-        SimpleDotCom theDotCom = new SimpleDotCom();
+        SimpleShips theDotCom = new SimpleShips();
 
         int randomNum = (int) (Math.random() * 5);
 
@@ -34,5 +35,9 @@ public class MainWorldOfWarShips
                 System.out.println("Вам потребовалось "+numOfGuesses +"попыток(и).");
             }
         }
+        */
+        ShipsBust gameProcces = new ShipsBust();
+        gameProcces.setUpGame();
+        gameProcces.startPlaying();
     }
 }
