@@ -5,13 +5,13 @@ import java.util.*;
 
 public class GameHelper {
     private static final String alphabet = "abcdefg";
-    private int gridLength = 7;
-    private int gridSize = 49;
-    private int[] grid = new int[gridSize];
+    private int gridLength = 7;                         //длинна сетки
+    private int gridSize = 49;                          //количество клеток
+    private int[] grid = new int[gridSize];             //сетка
     private int shipCount = 0;
 
 
-    public String getUserInput(String prompt) {
+    public String getUserInput(String prompt) {         //функция получения ввода данных пользователя
         String inputLine = null;
         System.out.println(prompt + " ");
         try {
@@ -28,7 +28,7 @@ public class GameHelper {
     public ArrayList<String> placeShips(int shipSize) {
         ArrayList<String> alphaCells = new ArrayList<String>();
 
-        String[] alphacoorse = new String[shipSize];    //координаты типа f6
+        //String[] alphacoorse = new String[shipSize];
         String temp = null;                             //временная строка конкатенации
         int[] coords = new int[shipSize];               //координаты текущего корабля
         int attempts = 0;                               //счетчик текущий попыпок
@@ -37,9 +37,10 @@ public class GameHelper {
 
         shipCount++;                                    //Энный корабль для размещения
         int incr = 1;                                   //устанавливается горизонтальный инкримент
-        if ((shipCount % 2) == 1) {                     //Если нечетный(размещаем вертикально
+        if ((shipCount % 2) == 1) {                     //Если нечетный(размещаем вертикально).Получается
             incr = gridLength;                          //устанавливается вертикальный инкримент
         }
+
 
         while (!success & attempts++ < 200) {           //главный поисковый цикл
             location = (int) (Math.random() * gridSize);//получаем случайную стартовую строку
@@ -64,12 +65,12 @@ public class GameHelper {
         int row = 0;                                    //значение строки
         int column = 0;                                 //числовое значение столбца
         while (x < shipSize) {
-            grid[coords[x]] = 1;                        //
-            row = (int) (coords[x] / gridLength);
-            column = coords[x] % gridLength;
-            temp = String.valueOf(alphabet.charAt(column));
+            grid[coords[x]] = 1;                        //запись в сетку местоположение первого корабля по x элементу массива coords
+            row = (int) (coords[x] / gridLength);       //расположение корабля по строке
+            column = coords[x] % gridLength;            //расположение корабля по столбцу
+            temp = String.valueOf(alphabet.charAt(column));//получаем символьное значение через alphabet
 
-            alphaCells.add(temp.concat(Integer.toString(row)));
+            alphaCells.add(temp.concat(Integer.toString(row)));//добавления в список конкатенированное символьное значение с со строкой
             x++;
 
         }

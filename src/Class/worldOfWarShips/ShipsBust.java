@@ -3,8 +3,8 @@ package Class.worldOfWarShips;
 import java.util.ArrayList;
 
 public class ShipsBust {
-    private ArrayList<Ships> shipList = new ArrayList<>();
-    private GameHelper gameHelper = new GameHelper();
+    private ArrayList<Ships> shipList = new ArrayList<>();      //список кораблей
+    private GameHelper gameHelper = new GameHelper();           //экземпляр GameHelper
     private int numOfGuess = 0;
 
 
@@ -46,7 +46,7 @@ public class ShipsBust {
 
     }
 
-    private void checkUserGuess(String userGuess) {
+    private void checkUserGuess(String userGuess) {         //проверка на попадание
         numOfGuess++;
         String result = "Мимо";
         for (Ships shipsToTest : shipList) {
@@ -71,7 +71,7 @@ public class ShipsBust {
 
         } else {
             System.out.println("Это заняло у вас довольно много времени." + numOfGuess+"попыток");
-            System.out.println("Рыбы водят хороводы вокруг ваших вложений");
+            System.out.println("Вы утонули");
         }
     }
 
